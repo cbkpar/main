@@ -3,11 +3,60 @@
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 	<title>반응형 연습</title>
-	<link rel="stylesheet" href="test.css">
+  <style>
+        body{background: #333;}
+@media only screen and (max-width: 768px){
+	body{background-color: blue;}
+}
+
+@media only screen and (min-width: 768px)and (max-width:1200px){
+	body{background-color: red;}
+}
+
+@media only screen and (min-width: 1200px){
+	body{background-color: green;}
+}
+
+.button {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+</style>
 </head>
 <body>
 	<p>반응형 연습</p>
-	<button class="button" id="button1" onclick="button1_click();" value="랜덤음식" />
+	<button class="button" id="button1" onclick="button1_click();">랜덤음식</button>
 <script>
 function button1_click() {
 	var ran = Math.floor(Math.random() * 5);
