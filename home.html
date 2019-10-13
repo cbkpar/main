@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="utf-8">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>반응형 연습</title>
+	<link rel="stylesheet" href="test.css">
+</head>
+<body>
+	<p>반응형 연습</p>
+	<input type="button" id="button1" onclick="button1_click();" value="랜덤음식" />
+<script>
+function button1_click() {
+	var ran = Math.floor(Math.random() * 5);
+	if(ran == 0){
+		alert("한식");
+	}else if(ran == 1){
+		alert("일식");
+	}else if(ran == 2){
+		alert("중식");
+	}else if(ran == 3){
+		alert("양식");
+	}else{
+		alert("굶음");
+	}
+}
+</script>
+</body>
+</html>
